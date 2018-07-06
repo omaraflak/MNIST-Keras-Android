@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     tools:context="com.aflak.mnistcnn.ui.MainActivity">
 
     <TextView
@@ -15,21 +13,26 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="30dp"
-        android:textSize="25sp"
         android:layout_marginBottom="50dp"
-        android:text="Draw number"/>
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:text="@string/activity_main_status_draw"
+        android:layout_above="@id/activity_main_drawView"
+        android:layout_centerHorizontal="true"/>
 
     <com.aflak.mnistcnn.ui.DrawView
         android:id="@+id/activity_main_drawView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:gravity="center"/>
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/activity_main_done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Predict"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="20dp"
+        android:text="@string/activity_main_button_predict"
+        android:layout_below="@+id/activity_main_drawView"
+        android:layout_centerHorizontal="true" />
 
-</LinearLayout>
+</RelativeLayout>

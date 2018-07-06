@@ -18,8 +18,8 @@ public class CNN {
     public float[] predict(float[] input){
         float output[] = new float[OUTPUT_SIZE];
         inferenceInterface.feed("conv2d_1_input", input, 1, IMAGE_SIZE, IMAGE_SIZE, 1);
-        inferenceInterface.run(new String[]{"dense_3/Softmax"});
-        inferenceInterface.fetch("dense_3/Softmax", output);
+        inferenceInterface.run(new String[]{"dense_2/Softmax"});
+        inferenceInterface.fetch("dense_2/Softmax", output);
         return output;
     }
 

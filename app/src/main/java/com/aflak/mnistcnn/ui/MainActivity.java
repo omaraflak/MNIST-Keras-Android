@@ -35,12 +35,9 @@ public class MainActivity extends AppCompatActivity {
         float[] output = cnn.predict(input);
         CNN.Result best = cnn.bestResult(output);
 
-        String text = best.number + " - " + best.score*100 + "%";
-        status.setText(text);
-
+        status.setText(String.valueOf(best.number));
         new Handler().postDelayed(() -> {
-            String statusText = "Draw number";
-            status.setText(statusText);
+            status.setText(R.string.activity_main_status_draw);
             drawView.clear();
         }, 1500);
     }
